@@ -10,6 +10,7 @@
 #include <errno.h>
 
 int main() {
+
   //FILE SIZE
   struct stat *buf = malloc(sizeof(struct stat));
   stat("stat.c",buf);
@@ -25,4 +26,7 @@ int main() {
   strftime(timeStr, sizeof(timeStr), "%c", &timetm);
 
   printf("Last accessed: %s\n", timeStr);
+
+  //PERMISSIONS
+  printf("Mode: %o\n", buf->st_mode);
 }
